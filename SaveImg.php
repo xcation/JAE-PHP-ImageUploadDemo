@@ -1,7 +1,10 @@
 <?php
-	define("TOP_SDK_WORK_DIR", "C:/tmp");
-	define("TOP_SDK_DEV_MODE", true);
-	include "TopSdk.php";
+	//define("TOP_SDK_WORK_DIR", "C:/tmp");
+	//define("TOP_SDK_DEV_MODE", true);
+	//include "TopSdk.php";
+	include("TopClient.php");
+	include("PictureUploadRequest.php");
+	
 	$appkey = "21686863";
 	$secret = "126b3f5051a4dde3ed050f620790bff5";
 	$sessionKey = "6100303d38817664bf376a9d4ee16656e704a073004bec8263664221";
@@ -40,7 +43,6 @@ if ((($_FILES["file"]["type"] == "image/gif")
 		echo "result:";
 		print_r($resp);
 		echo "<br>";
-		
 	}
 }
 else
