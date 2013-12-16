@@ -1,0 +1,26 @@
+!!com.taobao.tae.config.domain.Config
+
+#首页的配置，直接通过域名访问将使用此配置
+index: /UploadImg.php
+
+#http请求配置
+urls:
+#前端页面,相对于应用根目录，url配置的是短域名；
+#配置后可以通过/d/index访问到/index.php 
+- {handler: /UploadImg.php, url: /UploadImg}
+
+# 关闭首页缓存，请注意：上线后最好开启首页缓存，否则会性能表现不佳
+disableIndexCache: true
+
+#设置文件编码，微淘应用注意一定要设置
+fileEncoding: utf-8
+
+#安全和权限配置
+#这个是前缀规则, url代表请求相对路径的前缀。
+#role代表安全级别：
+#anonymous 是任何用户都可以访问，
+#developer 是站点所有者才能访问,
+#shopcustomer 是表示登录用户可以访问
+
+#security:
+#- {url: /,role: anonymous }
