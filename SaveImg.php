@@ -1,13 +1,12 @@
 <?php
-	//define("TOP_SDK_WORK_DIR", "C:/tmp");
-	//define("TOP_SDK_DEV_MODE", true);
-	//include "TopSdk.php";
+	//$resultFileUpload = $fileStoreService->saveBinaryFile($_FILES['file']->getContent(),"test.jpg") ;
+
 	include("TopClient.php");
 	include("PictureUploadRequest.php");
 	
 	$appkey = "21686863";
 	$secret = "126b3f5051a4dde3ed050f620790bff5";
-	$sessionKey = "6100303d38817664bf376a9d4ee16656e704a073004bec8263664221";
+	$sessionKey = "6102306c76eb4a1f8077afafe1ae94d35303ce1fedbc29b263664221";
 
 if ((($_FILES["file"]["type"] == "image/gif")
 	|| ($_FILES["file"]["type"] == "image/jpeg")
@@ -35,7 +34,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 		$req = new PictureUploadRequest;
 		$req->setPictureCategoryId(0);
 		//附件上传的机制参见PHP CURL文档，在文件路径前加@符号即可
-		$req->setImg($tmp);
+		$req->setImg("@C:/wamp/www/test.jpg");
 		$req->setImageInputTitle("Test.jpg");
 		$req->setTitle("TestTitle");
 		$resp = $c->execute($req, $sessionKey);
@@ -49,4 +48,5 @@ else
 {
 	echo "Invalid file";
 }
+
 ?>
