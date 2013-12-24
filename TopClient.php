@@ -86,6 +86,8 @@ class TopClient
 		}
 		$reponse = curl_exec($ch);
 		
+
+		
 		if (curl_errno($ch))
 		{
 			echo "error num is 0" . "<br />";
@@ -96,6 +98,7 @@ class TopClient
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			if (200 !== $httpStatusCode)
 			{
+				echo $httpStatusCode . "<br />";
 				throw new Exception($reponse,$httpStatusCode);
 			}
 		}
@@ -148,6 +151,8 @@ class TopClient
 		{
 			$sysParams["session"] = $session;
 		}
+		//print_r($sysParams);
+		//echo "<br />";
 
 		//获取业务参数
 		$apiParams = $request->getApiParas();
@@ -170,6 +175,7 @@ class TopClient
 		}
 		catch (Exception $e)
 		{
+			//echo "curl exception"."<br />";
 			$result->code = $e->getCode();
 			$result->msg = $e->getMessage();
 			return $result;
