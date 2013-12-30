@@ -1,5 +1,5 @@
 <?php
-	//include("RequestCheckUtil.php");
+	include("RequestCheckUtil.php");
 
 /**
  * TOP API: taobao.picture.upload request
@@ -105,11 +105,11 @@ client:phone手机版本宝贝使用
 	
 	public function check()
 	{
-		//RequestCheckUtil::checkNotNull($this->imageInputTitle,"imageInputTitle");
-		//RequestCheckUtil::checkNotNull($this->img,"img");
-		//RequestCheckUtil::checkNotNull($this->pictureCategoryId,"pictureCategoryId");
-		//RequestCheckUtil::checkMaxValue($this->pictureCategoryId,9223372036854775807,"pictureCategoryId");
-		//RequestCheckUtil::checkMinValue($this->pictureCategoryId,0,"pictureCategoryId");
+		RequestCheckUtil::checkNotNull($this->imageInputTitle,"imageInputTitle");
+		RequestCheckUtil::checkNotNull($this->img,"img");
+		RequestCheckUtil::checkNotNull($this->pictureCategoryId,"pictureCategoryId");
+		RequestCheckUtil::checkMaxValue($this->pictureCategoryId,9223372036854775807,"pictureCategoryId");
+		RequestCheckUtil::checkMinValue($this->pictureCategoryId,0,"pictureCategoryId");
 	}
 	
 	public function putOtherTextParam($key, $value) {
